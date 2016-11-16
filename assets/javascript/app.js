@@ -5,7 +5,10 @@
 	var starWarsGif=["Yoda", "Luke Skywalker", "Obi-One Kanobi" ]
 
 
-	var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=starwars";
+	// var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=starwars";
+
+
+	 var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 	$.ajax({url: queryURL, method: 'GET'}) 
 	.done(function(response) {
@@ -24,7 +27,7 @@
                 gifDiv.append(p)
                 gifDiv.append(personImage)
 
-                $('#gifsAppearHere').prepend(gifDiv);
+                $('#gifView').prepend(gifDiv);
             })
 
 
@@ -52,7 +55,7 @@
 
 		}
 
-	}
+	};
 
 	$("#findGalaxy").on('click', function(){
 
@@ -61,7 +64,7 @@
 		console.log("#galaxyInput");
 			starWarsGif.push(starWarsGif);
 
-			renderButtons();
+			
 
 		// Here we assemble our URL 
 		
